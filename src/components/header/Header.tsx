@@ -69,90 +69,90 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReportModal, onOpenContrac
   ];
 
   return (
-    <header className="border-b border-emerald-500/20 bg-gradient-to-b from-[#041a13] via-[#051c14] to-[#041610] sticky top-0 z-40 backdrop-blur-md shadow-2xl">
+    <header className="border-b border-emerald-500/20 bg-gradient-to-b from-[#041a13] via-[#051c14] to-[#041610] relative md:sticky md:top-0 z-40 backdrop-blur-md shadow-2xl">
       {/* Top Sovereign Bar */}
-      <div className="border-b border-emerald-500/15 py-2 px-4 bg-emerald-950/60">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs">
+      <div className="border-b border-emerald-500/15 py-1.5 px-3 md:py-2 md:px-4 bg-emerald-950/60">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 text-xs">
           {/* Official Emblem & Institution */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-900/80 border border-amber-400/50 shadow-inner">
-              <span className="text-amber-400 font-serif text-sm">🇩🇿</span>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center w-6 h-6 md:w-7 md:h-7 rounded-full bg-emerald-900/80 border border-amber-400/50 shadow-inner shrink-0">
+              <span className="text-amber-400 font-serif text-xs md:text-sm">🇩🇿</span>
             </div>
             <div className="flex flex-col">
-              <span className="font-bold text-slate-100 tracking-wide">الجمهورية الجزائرية الديمقراطية الشعبية</span>
-              <span className="text-emerald-300 text-[11px]">وزارة الفلاحة والتنمية الريفية | الديوان الوطني لضبط الإنتاج الفلاحي ومكافحة المضاربة</span>
+              <span className="font-bold text-slate-100 tracking-wide text-[11px] md:text-xs">الجمهورية الجزائرية الديمقراطية الشعبية</span>
+              <span className="hidden md:inline text-emerald-300 text-[11px]">وزارة الفلاحة والتنمية الريفية | الديوان الوطني لضبط الإنتاج الفلاحي ومكافحة المضاربة</span>
             </div>
           </div>
 
           {/* Quick Utility Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 md:gap-2 shrink-0">
             <button
               onClick={onOpenReportModal}
-              className="flex items-center gap-1.5 px-3 py-1 rounded bg-red-950/80 hover:bg-red-900 border border-red-500/40 text-red-200 transition-all text-xs font-semibold shadow-sm group"
+              className="flex items-center gap-1 px-2 py-1 md:px-3 md:py-1 rounded bg-red-950/80 hover:bg-red-900 border border-red-500/40 text-red-200 transition-all text-[11px] md:text-xs font-semibold shadow-sm group"
               title="تبليغ فوري عن رفع غير قانوني للأسعار أو احتكار"
             >
               <AlertTriangle className="w-3.5 h-3.5 text-red-400 group-hover:scale-110 transition-transform" />
-              <span>التبليغ عن مضاربة (1020)</span>
+              <span>تبليغ (1020)</span>
             </button>
 
             <button
               onClick={onOpenContractsList}
-              className="flex items-center gap-1.5 px-3 py-1 rounded bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-500/30 text-emerald-200 transition-all text-xs font-semibold"
+              className="flex items-center gap-1 px-2 py-1 md:px-3 md:py-1 rounded bg-emerald-900/60 hover:bg-emerald-800/80 border border-emerald-500/30 text-emerald-200 transition-all text-[11px] md:text-xs font-semibold"
             >
               <FileText className="w-3.5 h-3.5 text-amber-400" />
-              <span>سجل العقود المعتمدة ({contracts.length})</span>
+              <span>العقود ({contracts.length})</span>
             </button>
 
             <button
               onClick={resetData}
-              className="flex items-center gap-1 px-2.5 py-1 rounded bg-slate-900/80 hover:bg-slate-800 border border-slate-700/60 text-slate-300 transition-all text-xs hover:text-white"
+              className="flex items-center gap-1 px-2 py-1 rounded bg-slate-900/80 hover:bg-slate-800 border border-slate-700/60 text-slate-300 transition-all text-[11px] md:text-xs hover:text-white"
               title="استعادة البيانات التجريبية الافتراضية"
             >
               <RefreshCw className="w-3 h-3 text-slate-400" />
-              <span>إعادة الضبط</span>
+              <span className="hidden sm:inline">إعادة الضبط</span>
             </button>
           </div>
         </div>
       </div>
 
       {/* Main Brand & Role Bar */}
-      <div className="max-w-7xl mx-auto px-4 py-3.5">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-3 py-2.5 md:px-4 md:py-3.5">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-3 md:gap-4">
           {/* Logo & Platform Name */}
-          <div className="flex items-center gap-3.5">
-            <div className="relative">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-800 to-emerald-950 border-2 border-amber-400/60 flex items-center justify-center shadow-lg gold-glow">
-                <Scale className="w-6 h-6 text-amber-300" />
+          <div className="flex items-center gap-2.5 md:gap-3.5">
+            <div className="relative shrink-0">
+              <div className="w-9 h-9 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-emerald-600 via-emerald-800 to-emerald-950 border-2 border-amber-400/60 flex items-center justify-center shadow-lg gold-glow">
+                <Scale className="w-5 h-5 md:w-6 md:h-6 text-amber-300" />
               </div>
-              <div className="absolute -bottom-1 -right-1 bg-amber-500 text-emerald-950 text-[9px] font-black px-1.5 py-0.2 rounded-full border border-emerald-950">
+              <div className="absolute -bottom-1 -right-1 bg-amber-500 text-emerald-950 text-[8px] md:text-[9px] font-black px-1.5 py-0.2 rounded-full border border-emerald-950">
                 سيادي
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-2xl font-black tracking-tight text-white flex items-center gap-2">
+                <h1 className="text-lg md:text-2xl font-black tracking-tight text-white flex items-center gap-2">
                   <span>سوق المحصول</span>
-                  <span className="text-xs font-normal text-amber-400 bg-amber-400/10 border border-amber-400/25 px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <Sparkles className="w-3 h-3 text-amber-400" />
+                  <span className="text-[10px] md:text-xs font-normal text-amber-400 bg-amber-400/10 border border-amber-400/25 px-1.5 md:px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <Sparkles className="w-2.5 h-2.5 md:w-3 md:h-3 text-amber-400" />
                     Souq El Mahsool
                   </span>
                 </h1>
               </div>
-              <p className="text-xs text-emerald-200/80 font-medium">
+              <p className="hidden sm:block text-xs text-emerald-200/80 font-medium">
                 المنظومة الوطنية الرقمية لضبط وتسقيف الأسعار الزراعية والربط المباشر بين الفلاح والأسواق
               </p>
             </div>
           </div>
 
           {/* Role Navigation Pills */}
-          <div className="flex items-center bg-slate-950/80 p-1.5 rounded-xl border border-emerald-500/20 overflow-x-auto no-scrollbar shadow-inner">
+          <div className="flex items-center bg-slate-950/80 p-1 md:p-1.5 rounded-xl border border-emerald-500/20 overflow-x-auto no-scrollbar shadow-inner">
             {rolesConfig.map((item) => {
               const isActive = role === item.id;
               return (
                 <button
                   key={item.id}
                   onClick={() => setRole(item.id)}
-                  className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-bold transition-all whitespace-nowrap relative ${
+                  className={`flex items-center gap-1.5 md:gap-2 px-2.5 py-1.5 md:px-3.5 md:py-2 rounded-lg text-[11px] md:text-xs font-bold transition-all whitespace-nowrap relative cursor-pointer ${
                     isActive
                       ? 'bg-gradient-to-r from-emerald-800/90 to-emerald-700 text-white shadow-md border border-amber-400/40 gold-glow'
                       : 'text-slate-300 hover:text-white hover:bg-emerald-950/50'
@@ -161,7 +161,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenReportModal, onOpenContrac
                   {item.icon}
                   <span>{item.label}</span>
                   {item.badge && (
-                    <span className={`text-[10px] px-1.5 py-0.5 rounded-full border ${item.badgeColor || 'bg-slate-800 text-slate-300'}`}>
+                    <span className={`text-[9px] md:text-[10px] px-1 md:px-1.5 py-0.2 rounded-full border ${item.badgeColor || 'bg-slate-800 text-slate-300'}`}>
                       {item.badge}
                     </span>
                   )}
