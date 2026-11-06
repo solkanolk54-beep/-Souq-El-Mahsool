@@ -1,0 +1,6 @@
+{
+  "name": "سوق المحصول - Souq El Mahsool",
+  "description": "المنصة الوطنية الرقمية لضبط وتسقيف الأسعار الزراعية في الجزائر وحماية القدرة الشرائية ومكافحة المضاربة",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
